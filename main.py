@@ -4,7 +4,7 @@ from transformers import pipeline, AutoModelForSeq2SeqLM, AutoTokenizer
 # Load the Hugging Face model for English-to-Roman Urdu translation
 @st.cache_resource
 def load_model():
-    model_name = "your-hf-model-name"  # Replace this with your actual Hugging Face model name
+    model_name = "Helsinki-NLP/opus-mt-en-ur"  # Replace this with your actual Hugging Face model name
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     tokenizer = AutoTokenizer.from_pretrained(model_name)
     return pipeline("translation", model=model, tokenizer=tokenizer)
